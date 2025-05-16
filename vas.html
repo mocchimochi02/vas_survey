@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>VASアンケート</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    .question { margin-bottom: 30px; }
+    label { font-weight: bold; }
+    input[type="range"] { width: 100%; }
+    .value { text-align: right; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>実験後アンケート_vas</h1>
+
+  <form id="vasForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdOGpA6h2_aJYZxrFrl7OO84mBCS59JcrEF6SQFg85SMQ-b6Q/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+
+    <!-- 質問1 -->
+    <div class="question">
+      <label for="q1">① 集中していた度合い</label>
+      <div class="description">まったく集中できなかった  [0──────────100]  非常に集中できた</div>
+      <input type="range" id="q1" name="entry.1744244114" min="0" max="100" value="50" oninput="q1value.innerText = this.value">
+      <div class="value">現在の値：<span id="q1value">50</span></div>
+    </div>
+
+    <!-- 質問2 -->
+    <div class="question">
+      <label for="q2">② 気が散った頻度</label>
+      <div class="description">まったく気が散らなかった  [0──────────100]  非常に頻繁に気が散った</div>
+      <input type="range" id="q2" name="entry.1997171860" min="0" max="100" value="50" oninput="q2value.innerText = this.value">
+      <div class="value">現在の値：<span id="q2value">50</span></div>
+    </div>
+
+    <!-- 質問3 -->
+    <div class="question">
+      <label for="q3">③ 作業中の快適さ</label>
+      <div class="description">非常に不快だった  [0──────────100]  非常に快適だった</div>
+      <input type="range" id="q3" name="entry.1007376703" min="0" max="100" value="50" oninput="q3value.innerText = this.value">
+      <div class="value">現在の値：<span id="q3value">50</span></div>
+    </div>
+
+    <!-- 質問4 -->
+    <div class="question">
+      <label for="q4">④ エフェクトによる不快感の程度</label>
+      <div class="description">非常に不快だった  [0──────────100] まったく不快ではなかった</div>
+      <input type="range" id="q4" name="entry.475604816" min="0" max="100" value="50" oninput="q4value.innerText = this.value">
+      <div class="value">現在の値：<span id="q4value">50</span></div>
+    </div>
+
+    <!-- 質問5 -->
+    <div class="question">
+      <label for="q5">⑤ 没入感の強さ（作業に没頭していたか）</label>
+      <div class="description">まったく没入できなかった  [0──────────100]  完全に没入していた</div>
+      <input type="range" id="q5" name="entry.1341873168" min="0" max="100" value="50" oninput="q5value.innerText = this.value">
+      <div class="value">現在の値：<span id="q5value">50</span></div>
+    </div>
+
+    <!-- 質問6 -->
+    <div class="question">
+      <label for="q6">⑥ 疲労感の強さ（作業後の体感）</label>
+      <div class="description">非常に疲れた [0──────────100]まったく疲れなかった</div>
+      <input type="range" id="q6" name="entry.1299923821" min="0" max="100" value="50" oninput="q6value.innerText = this.value">
+      <div class="value">現在の値：<span id="q6value">50</span></div>
+    </div>
+
+    <input type="submit" value="送信">
+    <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) alert('送信が完了しました');"></iframe>
+  </form>
+</body>
+</html>
